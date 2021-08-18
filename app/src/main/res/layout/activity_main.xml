@@ -58,35 +58,64 @@
                 android:foregroundGravity="center">
                 <ImageView
                     android:id="@+id/m1_status"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:src="@drawable/uparrow"
                     android:layout_gravity="bottom"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginLeft="10dp"/>
+                    android:layout_marginBottom="25dp"
+                    android:layout_marginLeft="5dp"/>
                 <ImageView
                     android:id="@+id/m1"
                     android:layout_width="match_parent"
                     android:layout_height="130dp"
                     android:src="@drawable/gold"
                     android:scaleType="fitCenter"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     android:clickable="true"/>
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:background="@color/text_color_dark"
                     android:layout_gravity="right"/>
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/m1_price"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:layout_gravity="bottom"
-                    android:layout_marginBottom="10dp"
-                    android:text="XXXXXX\nGold"
-                    android:textSize="20dp"
-                    app:fontFamily="@font/ubunturegular"
-                    android:gravity="center" />
+                    android:layout_marginBottom="10dp">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m1_gold"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="Gold"
+                        android:textSize="15dp"
+                        app:fontFamily="@font/sansnarrow"
+                        android:gravity="center" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m1_price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/m1_gold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="XXXXXX"
+                        android:textSize="20dp"
+                        app:fontFamily="@font/ubunturegular"
+                        android:gravity="center" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m1_quantity_gold"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/m1_price"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="per 10 gram"
+                        android:textSize="10dp"
+                        app:fontFamily="@font/ubunturegular"
+                        android:gravity="center" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -103,18 +132,18 @@
                 app:cardBackgroundColor="@color/text_color">
                 <ImageView
                     android:id="@+id/m2_status"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:src="@drawable/downarraw"
                     android:layout_gravity="bottom|right"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginRight="10dp"/>
+                    android:layout_marginBottom="25dp"
+                    android:layout_marginRight="5dp"/>
                 <ImageView
                     android:id="@+id/m2"
                     android:layout_width="match_parent"
                     android:layout_height="130dp"
                     android:src="@drawable/silver"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     android:scaleType="fitCenter"
                     android:paddingHorizontal="10dp"/>
                 <View
@@ -122,16 +151,45 @@
                     android:layout_height="match_parent"
                     android:background="@color/text_color_dark"
                     android:layout_gravity="left"/>
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/m2_price"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:layout_gravity="bottom"
-                    android:layout_marginBottom="10dp"
-                    android:text="XXXXXX\nSilver"
-                    android:textSize="20dp"
-                    app:fontFamily="@font/ubunturegular"
-                    android:gravity="center" />
+                    android:layout_marginBottom="10dp">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m2_silver"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="Silver"
+                        android:textSize="15dp"
+                        app:fontFamily="@font/sansnarrow"
+                        android:gravity="center" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m2_price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/m2_silver"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="XXXXXX"
+                        android:textSize="20dp"
+                        app:fontFamily="@font/ubunturegular"
+                        android:gravity="center" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m2_quantity_silver"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/m2_price"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="per Kilogram"
+                        android:textSize="10dp"
+                        app:fontFamily="@font/ubunturegular"
+                        android:gravity="center" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -153,34 +211,63 @@
                     android:background="@color/text_color_dark"/>
                 <ImageView
                     android:id="@+id/m3_status"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:src="@drawable/uparrow"
                     android:layout_gravity="bottom"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginLeft="10dp"/>
+                    android:layout_marginBottom="25dp"
+                    android:layout_marginLeft="5dp"/>
                 <ImageView
                     android:id="@+id/m3"
                     android:layout_width="match_parent"
                     android:layout_height="130dp"
                     android:src="@drawable/platinum"
                     android:scaleType="fitCenter"
-                    android:layout_marginTop="20dp"/>
+                    android:layout_marginTop="15dp"/>
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:background="@color/text_color_dark"
                     android:layout_gravity="right"/>
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/m3_price"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:layout_gravity="bottom"
-                    android:layout_marginBottom="10dp"
-                    android:text="XXXXXX\nPlatinum"
-                    android:textSize="20dp"
-                    app:fontFamily="@font/ubunturegular"
-                    android:gravity="center" />
+                    android:layout_marginBottom="10dp">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m3_platinium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="Platinum"
+                        android:textSize="15dp"
+                        app:fontFamily="@font/sansnarrow"
+                        android:gravity="center" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m3_price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/m3_platinium"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="XXXXXX"
+                        android:textSize="20dp"
+                        app:fontFamily="@font/ubunturegular"
+                        android:gravity="center" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m3_quantity_platinium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/m3_price"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="per Kilogram"
+                        android:textSize="10dp"
+                        app:fontFamily="@font/ubunturegular"
+                        android:gravity="center" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -201,34 +288,63 @@
                     android:background="@color/text_color_dark"/>
                 <ImageView
                     android:id="@+id/m4_status"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:src="@drawable/downarraw"
                     android:layout_gravity="bottom|right"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginRight="10dp"/>
+                    android:layout_marginBottom="25dp"
+                    android:layout_marginRight="5dp"/>
                 <ImageView
                     android:id="@+id/m4"
                     android:layout_width="match_parent"
                     android:layout_height="130dp"
                     android:src="@drawable/palladium"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     android:scaleType="fitCenter"/>
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:background="@color/text_color_dark"
                     android:layout_gravity="left"/>
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/m4_price"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:layout_gravity="bottom"
-                    android:layout_marginBottom="10dp"
-                    android:text="XXXXXX\nPalladium"
-                    android:textSize="20dp"
-                    app:fontFamily="@font/ubunturegular"
-                    android:gravity="center" />
+                    android:layout_marginBottom="10dp">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m4_palladium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="Palladium"
+                        android:textSize="15dp"
+                        app:fontFamily="@font/sansnarrow"
+                        android:gravity="center" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m4_price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/m4_palladium"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="XXXXXX"
+                        android:textSize="20dp"
+                        app:fontFamily="@font/ubunturegular"
+                        android:gravity="center" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m1_quantity_palladium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/m4_price"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="per Kilogram"
+                        android:textSize="10dp"
+                        app:fontFamily="@font/ubunturegular"
+                        android:gravity="center" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -250,35 +366,64 @@
                     android:background="@color/text_color_dark"/>
                 <ImageView
                     android:id="@+id/m5_status"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:src="@drawable/uparrow"
                     android:layout_gravity="bottom"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginLeft="10dp"/>
+                    android:layout_marginBottom="25dp"
+                    android:layout_marginLeft="5dp"/>
                 <ImageView
                     android:id="@+id/m5"
                     android:layout_width="match_parent"
                     android:layout_height="130dp"
                     android:src="@drawable/copper"
                     android:scaleType="fitCenter"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     android:paddingHorizontal="10dp"/>
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:background="@color/text_color_dark"
                     android:layout_gravity="right"/>
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/m5_price"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:layout_gravity="bottom"
-                    android:layout_marginBottom="10dp"
-                    android:text="XXXXXX\nCopper"
-                    android:textSize="20dp"
-                    app:fontFamily="@font/ubunturegular"
-                    android:gravity="center" />
+                    android:layout_marginBottom="10dp">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m5_copper"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="Copper"
+                        android:textSize="15dp"
+                        app:fontFamily="@font/sansnarrow"
+                        android:gravity="center" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m5_price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/m5_copper"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="XXXXXX"
+                        android:textSize="20dp"
+                        app:fontFamily="@font/ubunturegular"
+                        android:gravity="center" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m5_quantity_copper"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/m5_price"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="per Kilogram"
+                        android:textSize="10dp"
+                        app:fontFamily="@font/ubunturegular"
+                        android:gravity="center" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -299,35 +444,64 @@
                     android:background="@color/text_color_dark"/>
                 <ImageView
                     android:id="@+id/m6_status"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:src="@drawable/downarraw"
                     android:layout_gravity="bottom|right"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginRight="10dp"/>
+                    android:layout_marginBottom="25dp"
+                    android:layout_marginRight="5dp"/>
                 <ImageView
                     android:id="@+id/m6"
                     android:layout_width="match_parent"
                     android:layout_height="130dp"
                     android:src="@drawable/aluminum"
                     android:scaleType="fitCenter"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     android:paddingHorizontal="10dp"/>
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:background="@color/text_color_dark"
                     android:layout_gravity="left"/>
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/m6_price"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:layout_gravity="bottom"
-                    android:layout_marginBottom="10dp"
-                    android:text="XXXXXX\nAluminium"
-                    android:textSize="20dp"
-                    app:fontFamily="@font/ubunturegular"
-                    android:gravity="center" />
+                    android:layout_marginBottom="10dp">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m6_aluminium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="Aluminium"
+                        android:textSize="15dp"
+                        app:fontFamily="@font/sansnarrow"
+                        android:gravity="center" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m6_price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/m6_aluminium"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="XXXXXX"
+                        android:textSize="20dp"
+                        app:fontFamily="@font/ubunturegular"
+                        android:gravity="center" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m6_quantity_aluminium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/m6_price"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="per Kilogram"
+                        android:textSize="10dp"
+                        app:fontFamily="@font/ubunturegular"
+                        android:gravity="center" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -350,34 +524,63 @@
                     android:background="@color/text_color_dark"/>
                 <ImageView
                     android:id="@+id/m7_status"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:src="@drawable/uparrow"
                     android:layout_gravity="bottom"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginLeft="10dp"/>
+                    android:layout_marginBottom="25dp"
+                    android:layout_marginLeft="5dp"/>
                 <ImageView
                     android:id="@+id/m7"
                     android:layout_width="match_parent"
                     android:layout_height="130dp"
                     android:src="@drawable/nickel"
                     android:scaleType="fitCenter"
-                    android:layout_marginTop="20dp"/>
+                    android:layout_marginTop="15dp"/>
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:background="@color/text_color_dark"
                     android:layout_gravity="right"/>
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/m7_price"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:layout_gravity="bottom"
-                    android:layout_marginBottom="10dp"
-                    android:text="XXXXXX\nNickel"
-                    android:textSize="20dp"
-                    app:fontFamily="@font/ubunturegular"
-                    android:gravity="center" />
+                    android:layout_marginBottom="10dp">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m7_nickel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="Nickel"
+                        android:textSize="15dp"
+                        app:fontFamily="@font/sansnarrow"
+                        android:gravity="center" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m7_price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/m7_nickel"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="XXXXXX"
+                        android:textSize="20dp"
+                        app:fontFamily="@font/ubunturegular"
+                        android:gravity="center" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m7_quantity_nickel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/m7_price"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="per Kilogram"
+                        android:textSize="10dp"
+                        app:fontFamily="@font/ubunturegular"
+                        android:gravity="center" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/metal8"
@@ -393,35 +596,64 @@
                     android:background="@color/text_color_dark"/>
                 <ImageView
                     android:id="@+id/m8_status"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:src="@drawable/downarraw"
                     android:layout_gravity="bottom|right"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginRight="10dp"/>
+                    android:layout_marginBottom="25dp"
+                    android:layout_marginRight="5dp"/>
                 <ImageView
                     android:id="@+id/m8"
                     android:layout_width="match_parent"
                     android:layout_height="130dp"
                     android:src="@drawable/zinc"
                     android:scaleType="fitCenter"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     android:paddingHorizontal="10dp"/>
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:background="@color/text_color_dark"
                     android:layout_gravity="left"/>
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/m8_price"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:layout_gravity="bottom"
-                    android:layout_marginBottom="10dp"
-                    android:text="XXXXXX\nZinc"
-                    android:textSize="20dp"
-                    app:fontFamily="@font/ubunturegular"
-                    android:gravity="center" />
+                    android:layout_marginBottom="10dp">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m8_zinc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="Zinc"
+                        android:textSize="15dp"
+                        app:fontFamily="@font/sansnarrow"
+                        android:gravity="center" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m8_price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/m8_zinc"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="XXXXXX"
+                        android:textSize="20dp"
+                        app:fontFamily="@font/ubunturegular"
+                        android:gravity="center" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/m8_quantity_zinc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/m8_price"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="per Kilogram"
+                        android:textSize="10dp"
+                        app:fontFamily="@font/ubunturegular"
+                        android:gravity="center" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

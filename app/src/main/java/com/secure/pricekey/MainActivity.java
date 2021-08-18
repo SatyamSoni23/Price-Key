@@ -18,8 +18,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fetch_data(){
-        String url = "https://metals-api.com/api/latest?access_key=794k87o990z9210evqhy6r4v2yy677nvkornw45byy1k4dptptobrnrt4267&base=INR&symbols=XAU%2CXAG%2CXPT%2CXPD%2CXCU%2CALU%2CNI%2CZNC";
+        String url = "https://metals-api.com/api/latest?access_key=oi60gz8dv4ew13co42d41xw7ny5ivowkvub99s23j73bdi0dmu8mh5qaeiig&base=INR&symbols=XAU%2CXAG%2CXPT%2CXPD%2CXCU%2CALU%2CNI%2CZNC";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
                     @Override
@@ -91,19 +93,40 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setValue(){
-        Rate rate = rateArrayList.get(0);
         Log.d("ss", Integer.toString(rateArrayList.size()));
-        m1_price.setText(rate.gold + "\nGold");
-        m2_price.setText(rate.silver + "\nSilver");
-        m3_price.setText(rate.platinum + "\nPlatinum");
-        m4_price.setText(rate.palladium + "\nPalladium");
-        m5_price.setText(rate.copper + "\nCopper");
-        m6_price.setText(rate.aluminum + "\nAluminium");
-        m7_price.setText(rate.nickel + "\nNickel");
-        m8_price.setText(rate.zinc + "\nZinc");
+        Rate rate = rateArrayList.get(0);
+
+        Double gold = Double.parseDouble(rate.gold);
+        Double silver = Double.parseDouble(rate.silver);
+        Double platinum = Double.parseDouble(rate.platinum);
+        Double palladium = Double.parseDouble(rate.palladium);
+        Double copper = Double.parseDouble(rate.copper);
+        Double aluminium = Double.parseDouble(rate.aluminum);
+        Double nickel = Double.parseDouble(rate.nickel);
+        Double zinc = Double.parseDouble(rate.zinc);
+
+        double c = 28.3495;
+
+        gold = (gold*10)/c;
+        silver = (silver*1000)/c;
+        platinum = (platinum*10)/c;
+        palladium = (palladium*1000)/c;
+        copper = (copper*1000)/c;
+        aluminium = (aluminium*1000)/c;
+        nickel = (nickel*1000)/c;
+        zinc = (zinc*1000)/c;
+
+        NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("en", "in"));
+        nf.setMaximumFractionDigits(2);
+
+        m1_price.setText(nf.format(gold));
+        m2_price.setText(nf.format(silver));
+        m3_price.setText(nf.format(platinum));
+        m4_price.setText(nf.format(palladium));
+        m5_price.setText(nf.format(copper));
+        m6_price.setText(nf.format(aluminium));
+        m7_price.setText(nf.format(nickel));
+        m8_price.setText(nf.format(zinc ));
     }
 
-    private void calculation(){
-        
-    }
 }

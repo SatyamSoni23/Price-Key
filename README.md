@@ -34,7 +34,7 @@ https://metals-api.com/
 ## Screenshots
 <table>
 <tr>
-    <td><img src="https://github.com/SatyamSoni23/Price-Key/blob/master/Screenshots/pk1.png" width=340 height=480 padding = "20"/></td>
-    <td><img src="https://github.com/SatyamSoni23/Price-Key/blob/master/Screenshots/pk2.png" width=340 height=480 padding = "20"/></td>
+    <td><img src="https://github.com/SatyamSoni23/Price-Key/blob/master/Screenshots/pk1.png" width=300 height=480 padding = "20"/></td>
+    <td><img src="https://github.com/SatyamSoni23/Price-Key/blob/master/Screenshots/pk2.png" width=300 height=480 padding = "20"/></td>
     </tr>
 </table>

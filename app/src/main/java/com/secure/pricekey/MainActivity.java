@@ -1,9 +1,12 @@
 package com.secure.pricekey;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -12,6 +15,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.facebook.shimmer.ShimmerFrameLayout;
+import com.google.android.material.progressindicator.LinearProgressIndicator;
 import com.google.android.material.textview.MaterialTextView;
 
 import org.json.JSONArray;
@@ -28,11 +32,14 @@ public class MainActivity extends AppCompatActivity {
 
     MaterialTextView m1_price, m2_price, m3_price, m4_price, m5_price, m6_price, m7_price, m8_price;
     ArrayList<Rate> rateArrayList = new ArrayList<Rate>();
-
+    LinearProgressIndicator progress_bar;
+    ConstraintLayout bottom_container;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         init();
         fetch_data();
@@ -47,10 +54,13 @@ public class MainActivity extends AppCompatActivity {
         m6_price = findViewById(R.id.m6_price);
         m7_price = findViewById(R.id.m7_price);
         m8_price = findViewById(R.id.m8_price);
+        progress_bar = findViewById(R.id.progress_bar);
+        bottom_container = findViewById(R.id.bottom_container);
     }
 
     private void fetch_data(){
         String url = "https://metals-api.com/api/latest?access_key=oi60gz8dv4ew13co42d41xw7ny5ivowkvub99s23j73bdi0dmu8mh5qaeiig&base=INR&symbols=XAU%2CXAG%2CXPT%2CXPD%2CXCU%2CALU%2CNI%2CZNC";
+        //String url = "##";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
                     @Override
@@ -127,6 +137,8 @@ public class MainActivity extends AppCompatActivity {
         m6_price.setText(nf.format(aluminium));
         m7_price.setText(nf.format(nickel));
         m8_price.setText(nf.format(zinc ));
+        progress_bar.setVisibility(View.INVISIBLE);
+        bottom_container.setVisibility(View.VISIBLE);
     }
 
 }
